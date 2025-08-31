@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Selamat Hari Jadi, Alip! — from acap nsem</title>
+  <meta name="description" content="Laman ucapan Selamat Hari Jadi untuk Alip — daripada acap nsem" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f0f14;
+      --panel:#161821cc;
+      --accent:#ff4d6d;
+      --accent-2:#6cf1ff;
+      --text:#f3f5f7;
+      --muted:#aab3bd;
+      --glow: 0 0 25px rgba(255,77,109,.45), 0 0 55px rgba(108,241,255,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background: radial-gradient(1200px 800px at 10% -10%, #1b1f2a 0%, #0c0d12 50%, #05060a 100%), var(--bg);
+      color:var(--text); font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+      overflow-x:hidden;
+    }
+    .stars{position:fixed; inset:0; pointer-events:none; background:transparent;}
+    .wrapper{min-height:100%; display:grid; grid-template-rows:auto 1fr auto}
+    header{position:sticky; top:0; backdrop-filter: blur(8px); background:linear-gradient(180deg, rgba(10,10,14,.75), rgba(10,10,14,0)); border-bottom:1px solid #2a2d39; z-index:5}
+    .nav{max-width:1100px; margin:auto; display:flex; align-items:center; gap:16px; padding:16px 20px}
+    .brand{font-weight:800; letter-spacing:.5px}
+    .brand span{color:var(--accent)}
+    .chip{margin-left:auto; font-size:.85rem; color:var(--muted)}.hero{position:relative; display:grid; place-items:center; padding:72px 20px 32px; text-align:center}
+.hero h1{font-size: clamp(2.4rem, 5vw + 1rem, 4.5rem); line-height:1.05; margin:0 0 10px; font-weight:800; text-shadow: var(--glow)}
+.hero .script{font-family:"Great Vibes", cursive; font-size: clamp(1.6rem, 2.2vw + 1rem, 2.6rem); color:var(--accent-2)}
+.hero .name{display:inline-block; padding:4px 14px; border-radius:999px; background:linear-gradient(90deg, rgba(255,77,109,.15), rgba(108,241,255,.15)); border:1px solid rgba(255,255,255,.1)}
+.hero p{max-width:780px; margin:14px auto 22px; color:var(--muted)}
+
+.panel{max-width:980px; margin:24px auto; background:var(--panel); border:1px solid #262938; border-radius:22px; padding:24px; box-shadow:0 10px 40px rgba(0,0,0,.35)}
+
+.actions{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:12px}
+button{appearance:none; border:1px solid #303348; background:#1b1e2b; color:var(--text); padding:12px 18px; border-radius:16px; font-weight:600; cursor:pointer; transition:.2s transform, .2s box-shadow, .3s background}
+button:hover{transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.btn-accent{background:linear-gradient(95deg, #ff4d6d, #ff8fab); border:none}
+.btn-ghost{background:#151827}
+
+.cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px; margin-top:16px}
+.card{background:#121420; border:1px solid #272a3a; border-radius:18px; padding:16px; position:relative; overflow:hidden}
+.card h3{margin:4px 0 8px}
+.card p{margin:0; color:var(--muted); font-size:.95rem}
+.badge{position:absolute; top:12px; right:12px; font-size:.75rem; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1)}
+
+footer{padding:30px 12px; text-align:center; color:var(--muted)}
+footer .from{display:inline-block; padding:8px 14px; border-radius:999px; border:1px dashed #3a3e55; margin-top:8px}
+
+/* Balloons */
+.balloons{position:fixed; inset:0; pointer-events:none; overflow:hidden}
+.balloon{position:absolute; width:36px; height:46px; background: radial-gradient(circle at 30% 30%, #fff8, #fff0 35%), var(--b, #ff6b6b); border-radius:50% 50% 45% 45%/55% 55% 45% 45%; box-shadow: inset 0 -8px 24px #0004, 0 8px 30px #0005; animation: floatUp var(--t,10s) linear infinite;}
+.balloon::after{content:""; position:absolute; left:50%; bottom:-12px; transform:translateX(-50%); width:2px; height:60px; background:linear-gradient(#ffffff55,#ffffff10)}
+@keyframes floatUp{from{transform:translateY(110vh) translateX(var(--x,0)) rotate(0)} to{transform:translateY(-20vh) translateX(calc(var(--x,0) + 60px)) rotate(6deg)}}
+
+/* Fireworks canvas layered on top */
+#fx{position:fixed; inset:0; pointer-events:none}
+
+/* Typewriter */
+.type{border-right:2px solid var(--accent-2); white-space:nowrap; overflow:hidden}
+
+/* Mobile tweaks */
+@media (max-width: 480px){
+  .hero h1{font-size:2.4rem}
+  .hero .script{font-size:1.6rem}
+}
+
+  </style>
+</head>
+<body>
+  <canvas id="stars" class="stars"></canvas>
+  <canvas id="fx"></canvas>
+  <div class="balloons" id="balloons"></div>  <div class="wrapper">
+    <header>
+      <nav class="nav">
+        <div class="brand">🎉 <span>HBD</span> • Alip</div>
+        <div class="chip">31 Ogos <span id="year"></span></div>
+      </nav>
+    </header><main>
+  <section class="hero">
+    <h1 class="type" id="headline">Selamat Hari Jadi, <span class="name">Alip</span>! 🎂</h1>
+    <div class="script">Semoga panjang umur, sihat selalu & dimurahkan rezeki.</div>
+    <p>Hari ini milikmu — enjoy setiap detik! Tekan butang kejutan di bawah untuk vibe yang lebih meriah 😉</p>
+    <div class="actions">
+      <button class="btn-accent" id="btnSurprise">🎁 Kejutan!</button>
+      <button class="btn-ghost" id="btnWish">💌 Buka ucapan</button>
+      <button class="btn-ghost" id="btnMusic">🎵 Main lagu</button>
+      <button class="btn-ghost" id="btnShare">🔗 Kongsi</button>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="cards">
+      <article class="card">
+        <span class="badge">🎂</span>
+        <h3>Untuk Alip</h3>
+        <p>Setiap tahun tambah matang & hebat. Terus kejar mimpi dan jangan berhenti senyum!</p>
+      </article>
+      <article class="card">
+        <span class="badge">⭐</span>
+        <h3>Doa</h3>
+        <p>Semoga dipermudahkan urusan, diluaskan rezeki, dijauhkan dari kesedihan, dan sentiasa dikelilingi orang baik.</p>
+      </article>
+      <article class="card">
+        <span class="badge">🎉</span>
+        <h3>Celebrate!</h3>
+        <p>Rehatkan minda, nikmati hari istimewa ini. You deserve the best vibes.</p>
+      </article>
+      <article class="card">
+        <span class="badge">💖</span>
+        <h3>Ucapan Ikhlas</h3>
+        <p>From: <strong>acap nsem</strong> — Terima kasih sebab jadi kawan yang power. Proud of you!</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Dibuat dengan ❤️ khusus untuk <strong>Alip</strong>.
+  <div class="from">— from <strong>acap nsem</strong></div>
+</footer>
+
+  </div>  <!-- Audio (user-triggered for mobile autoplay policies) -->  <audio id="music" preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_bf57a1b8da.mp3?filename=happy-birthday-113285.mp3" type="audio/mpeg"/>
+  </audio>  <script>
+    // Year chip
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Typewriter effect
+    (function typewriter(){
+      const el = document.getElementById('headline');
+      const full = el.textContent; el.textContent = '';
+      let i=0; const tick=()=>{ el.textContent = full.slice(0, i++); if(i<=full.length){ setTimeout(tick, 25);} else {el.classList.remove('type')} }; tick();
+    })();
+
+    // Share (Web Share API fallback)
+    document.getElementById('btnShare').addEventListener('click', async () => {
+      const data = {title: 'Selamat Hari Jadi, Alip!', text: 'Ucapan dari acap nsem 🎉', url: location.href};
+      if (navigator.share){ try{ await navigator.share(data);}catch(e){} }
+      else { await navigator.clipboard.writeText(data.url); alert('Pautan disalin!'); }
+    });
+
+    // Music controls
+    const music = document.getElementById('music');
+    const btnMusic = document.getElementById('btnMusic');
+    btnMusic.addEventListener('click', async () => {
+      if (music.paused){ await music.play(); btnMusic.textContent='⏸️ Hentikan lagu'; }
+      else { music.pause(); btnMusic.textContent='🎵 Main lagu'; }
+    });
+
+    // Balloons spawn
+    function spawnBalloons(count=16){
+      const wrap = document.getElementById('balloons');
+      for(let i=0;i<count;i++){
+        const b=document.createElement('div'); b.className='balloon';
+        const hue = Math.floor(Math.random()*360);
+        b.style.setProperty('--b', `hsl(${hue} 85% 60%)`);
+        b.style.left = Math.random()*100+'vw';
+        b.style.setProperty('--x', (Math.random()*60-30)+'px');
+        b.style.setProperty('--t', (8+Math.random()*6)+'s');
+        wrap.appendChild(b);
+        setTimeout(()=>b.remove(), 12000);
+      }
+    }
+
+    // Simple fireworks + confetti
+    const fx = document.getElementById('fx');
+    const ctx = fx.getContext('2d');
+    let W,H; function resize(){ W=fx.width=innerWidth; H=fx.height=innerHeight;} resize(); addEventListener('resize', resize);
+
+    const particles = []; const grav=0.2; const drag=0.985;
+    function burst(x,y, n=90){
+      for(let i=0;i<n;i++){
+        const a=Math.random()*Math.PI*2; const s=Math.random()*6+4;
+        particles.push({x,y, vx:Math.cos(a)*s, vy:Math.sin(a)*s-5, life:80+Math.random()*40, hue:Math.floor(Math.random()*360)});
+      }
+    }
+    function confettiLine(){
+      const y = H*0.2 + Math.random()*H*0.6;
+      for(let x=0;x<W; x+=35){ burst(x+Math.random()*30, y+Math.random()*30, 14); }
+    }
+    function tick(){
+      ctx.clearRect(0,0,W,H);
+      for(let i=particles.length-1;i>=0;i--){
+        const p=particles[i]; p.vx*=drag; p.vy=p.vy*drag+grav; p.x+=p.vx; p.y+=p.vy; p.life-=1;
+        ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.vx*0.05);
+        ctx.fillStyle=`hsl(${p.hue} 90% 60%)`; ctx.fillRect(-2,-2,4,8);
+        ctx.restore();
+        if(p.life<=0 || p.y>H+40) particles.splice(i,1);
+      }
+      requestAnimationFrame(tick);
+    } tick();
+
+    // Starfield background
+    const stars = document.getElementById('stars');
+    const sctx = stars.getContext('2d'); let SW,SH; function sResize(){ SW=stars.width=innerWidth; SH=stars.height=innerHeight;} sResize(); addEventListener('resize', sResize);
+    const starz = Array.from({length:180},()=>({x:Math.random()*SW, y:Math.random()*SH, r:Math.random()*1.2, a:Math.random()}));
+    (function sTick(){ sctx.clearRect(0,0,SW,SH); for(const s of starz){ s.a += 0.02; const o = 0.4+Math.sin(s.a)*0.4; sctx.fillStyle = `rgba(255,255,255,${o})`; sctx.beginPath(); sctx.arc(s.x,s.y,s.r,0,Math.PI*2); sctx.fill(); } requestAnimationFrame(sTick); })();
+
+    // Surprise button action
+    document.getElementById('btnSurprise').addEventListener('click', () => {
+      confettiLine(); burst(W*0.5, H*0.35, 160); spawnBalloons(14); shake();
+      if(music.paused){ music.play().catch(()=>{}); btnMusic.textContent='⏸️ Hentikan lagu'; }
+    });
+
+    // Open wish modal (lightweight inline)
+    document.getElementById('btnWish').addEventListener('click', () => {
+      const msg = `Selamat Hari Jadi, Alip! Semoga setiap langkah dipandu bahagia.\n— from acap nsem`;
+      if(confirm(msg + "\n\nNak salin ucapan ni?")){
+        navigator.clipboard.writeText(msg);
+        alert('Ucapan telah disalin ✅');
+      }
+      burst(W*0.8, H*0.2, 90);
+    });
+
+    // Cute little shake on hero
+    function shake(){
+      const hero = document.querySelector('.hero');
+      hero.animate([
+        {transform:'translateY(0)'},
+        {transform:'translateY(-6px)'},
+        {transform:'translateY(0)'}
+      ], {duration:380, easing:'ease-out'});
+    }
+  </script></body>
+  </html>
